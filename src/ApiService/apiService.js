@@ -31,3 +31,8 @@ export function getReviews(id) {
         .get(`movie/${id}/reviews?api_key=${API_KEY}&language=en-US&page=1`)
         .then(res => res.data);
 }
+export function getTrailer(id) {
+    return axios
+        .get(`/movie/${id}/videos?api_key=${API_KEY}`)
+        .then(res => res.data);
+}

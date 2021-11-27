@@ -11,6 +11,7 @@ import MovieDetails from '../components/MovieDetails/MovieDetails';
 import * as apiService from '../ApiService/apiService';
 import Cast from '../components/Cast/Cast';
 import Reviews from '../components/Reviews/Reviews';
+import Trailer from '../components/Trailer/Trailer';
 import s from '../components/MovieDetails/MovieDetails.module.scss';
 
 export default function MovieDetailsPage() {
@@ -26,6 +27,9 @@ export default function MovieDetailsPage() {
             navigate(-2);
         }
         if (location.pathname === `/movies/${movieId}/reviews`) {
+            navigate(-2);
+        }
+        if (location.pathname === `/movies/${movieId}/trailer`) {
             navigate(-2);
         }
     };
@@ -50,10 +54,13 @@ export default function MovieDetailsPage() {
                 <NavLink to="reviews" className={s.bottomLink}>
                     Reviews
                 </NavLink>
-
+                <NavLink to="trailer" className={s.bottomLink}>
+                    Trailer
+                </NavLink>
                 <Routes>
                     <Route path="/cast" element={<Cast />} />
                     <Route path="/reviews" element={<Reviews />} />
+                    <Route path="/trailer" element={<Trailer />} />
                 </Routes>
             </div>
         </>
