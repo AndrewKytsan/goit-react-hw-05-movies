@@ -2,8 +2,7 @@ import Searchbar from '../components/Searchbar/Searchbar';
 import Gallery from '../components/Gallery/Gallery';
 import * as apiService from '../ApiService/apiService';
 import { useLocation, useNavigate } from 'react-router';
-import { useState } from 'react';
-import { useEffect } from 'react/cjs/react.development';
+import { useState, useEffect } from 'react';
 
 export default function MoviePage() {
     const location = useLocation();
@@ -25,7 +24,7 @@ export default function MoviePage() {
         apiService
             .getFilmsByQuery(allQuery)
             .then(res => setResult(res.results));
-    }, [allQuery]);
+    });
 
     return (
         <>

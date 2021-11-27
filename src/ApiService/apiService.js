@@ -10,9 +10,7 @@ export function getTrendFilms() {
 
 export function getFilmsByQuery(query, page = 1) {
     return axios
-        .get(
-            `/search/movie?api_key=${API_KEY}&query=${query}&language=en-US&page=${page}&include_adult=false`,
-        )
+        .get(`/search/movie?api_key=${API_KEY}&query=${query}&page=${page}`)
         .then(res => res.data);
 }
 
@@ -24,7 +22,7 @@ export function getDetailsofFilm(id) {
 
 export function getCredits(id) {
     return axios
-        .get(`movie/${id}/credits?api_key=${API_KEY}&language=en-US`)
+        .get(`movie/${id}/credits?api_key=${API_KEY}`)
         .then(res => res.data);
 }
 

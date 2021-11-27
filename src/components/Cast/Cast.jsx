@@ -1,5 +1,5 @@
 import { useParams } from 'react-router';
-import { useEffect, useState } from 'react/cjs/react.development';
+import { useEffect, useState } from 'react';
 import * as apiService from '../../ApiService/apiService';
 import s from './Cast.module.scss';
 export default function Cast() {
