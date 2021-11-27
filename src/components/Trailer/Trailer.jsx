@@ -1,7 +1,6 @@
 import { useState, useEffect } from 'react';
 import { useParams } from 'react-router';
 import * as apiService from '../../ApiService/apiService';
-import s from '../MovieDetails/MovieDetails.module.scss';
 export default function Trailer() {
     const [trailer, setTrailer] = useState([]);
     const { movieId } = useParams();
